@@ -34,6 +34,10 @@
 			<scope>test</scope>
 		</dependency>
 		
+		
+		<!-- Open Api Swagger 3.0-->
+		<!-- http://localhost:8080/swagger-ui/index.html-->
+		
 		   <dependency>
 		      <groupId>org.springdoc</groupId>
 		      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
