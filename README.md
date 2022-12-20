@@ -12,3 +12,7 @@ Unit Test cases are written for The Random Number Range and also the Api respons
 Deployed the Spring Boot Application in railway
 
 https://rps-natwest-production.up.railway.app/
+
+swagger url : 
+
+https://rps-natwest-production.up.railway.app/swagger-ui/index.html
