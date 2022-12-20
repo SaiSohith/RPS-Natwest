@@ -45,14 +45,17 @@
                 console.log(resp);
                 if(resp.msg=="Player wins")
                 {
+                    document.getElementById("result").innerText=resp.msg;
                     userwin+=1;
                     document.getElementById("userwin").innerText=userwin;
+                    
                 }
                 else if(resp.msg=="It is a tie"){
                     document.getElementById("result").innerText=resp.msg;
                 }
                 else
                 {  
+                    document.getElementById("result").innerText=resp.msg;
                     computerwin+=1;
                     document.getElementById("compwin").innerText=computerwin;
                 }
@@ -66,6 +69,7 @@
                 console.log(resp);
                 if(resp.msg=="Player wins")
                 {
+                    document.getElementById("result").innerText=resp.msg;
                     userwin+=1;
                     document.getElementById("userwin").innerText=userwin;
                 }
@@ -73,7 +77,7 @@
                     document.getElementById("result").innerText=resp.msg;
                 }
                 else
-                {  
+                {  document.getElementById("result").innerText=resp.msg;
                     computerwin+=1;
                     document.getElementById("compwin").innerText=computerwin;
                 }
@@ -86,7 +90,7 @@
             .then((resp) => {
                 console.log(resp);
                 if(resp.msg=="Player wins")
-                {
+                {document.getElementById("result").innerText=resp.msg;
                     userwin+=1;
                     document.getElementById("userwin").innerText=userwin;
                 }
@@ -94,7 +98,7 @@
                     document.getElementById("result").innerText=resp.msg;
                 }
                 else
-                {  
+                {  document.getElementById("result").innerText=resp.msg;
                     computerwin+=1;
                     document.getElementById("compwin").innerText=computerwin;
                 }
