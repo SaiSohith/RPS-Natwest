@@ -1,16 +1,25 @@
 package com.games.app.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import com.games.app.controller.ActionController;
 
 @Service
 public class ActionService {
 	
+	Logger logger=LoggerFactory.getLogger(ActionService.class);
 	
 	public String generateRandomMove() {
 		int min_range=1;
 		int max_range=3;
+		
 		int range=max_range-min_range+1;
+		
 		int random_value=(int)(Math.random()*range)+min_range;
+		
+		logger.trace("Generated random value  "+random_value);
 		
 		if(random_value==1) {
 			return "Rock";
@@ -27,6 +36,9 @@ public class ActionService {
 	
 	public String findResult(String UserMove) {
 		String randomMove=generateRandomMove();
+		
+		logger.trace("Generated random Move  "+randomMove);
+		
 		if(UserMove.equals(randomMove)) {
 			return "It is a tie";
 		}
@@ -38,9 +50,5 @@ public class ActionService {
 		else {
 			return "Computer wins";
 		}
-	}
-	
-	public String getValue() {
-		return "Hello Service";
 	}
 }

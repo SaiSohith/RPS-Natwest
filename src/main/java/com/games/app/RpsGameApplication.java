@@ -10,6 +10,8 @@ public class RpsGameApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RpsGameApplication.class, args);
 	}
-	
+	public String getValue() {
+		return "Hello Service";
+	}
 
 }
