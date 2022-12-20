@@ -40,7 +40,7 @@ public class ActionController {
 		
 		String gamePlayResult=gameActionService.findResult(userMove);
 		
-		logger.info("Game Play Result"+gamePlayResult);
+		logger.info("Game Play Result  "+gamePlayResult);
 		
 		return new ApiResponse(200,gamePlayResult);
 	}

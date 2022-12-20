@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="rock" onclick="RockClick()">Rock</button>
+    <button class="paper" onclick="PaperClick()">Paper</button>
+    <button class="scissor" onclick="ScissorClick()">Scissor</button>
+    <br>
+    <br>
+    
+    
+    <span id="result"></span>
+
+    <br>
+    <br>
+    <br>
+    
+    <div>
+        <div>
+            <b>User Win: </b>
+            <p id="userwin"></p>
+        </div>
+        <br>
+        <br>
+        <div>
+            <b>Computer Win: </b>
+            <p id="compwin"></p>
+        </div>
+    </div>
+
+    <script>
+        var userwin=0;
+        var computerwin=0;
+        function RockClick()
+        {
+            
+            fetch('http://localhost:8080/action/Rock')
+            .then(res=>res.json())
+            .then((resp) => {
+                console.log(resp);
+                if(resp.msg=="Player wins")
+                {
+                    userwin+=1;
+                    document.getElementById("userwin").innerText=userwin;
+                }
+                else if(resp.msg=="It is a tie"){
+                    document.getElementById("result").innerText=resp.msg;
+                }
+                else
+                {  
+                    computerwin+=1;
+                    document.getElementById("compwin").innerText=computerwin;
+                }
+            })
+        }
+        function PaperClick()
+        {
+            fetch('http://localhost:8080/action/Paper')
+            .then(res=>res.json())
+            .then((resp) => {
+                console.log(resp);
+                if(resp.msg=="Player wins")
+                {
+                    userwin+=1;
+                    document.getElementById("userwin").innerText=userwin;
+                }
+                else if(resp.msg=="It is a tie"){
+                    document.getElementById("result").innerText=resp.msg;
+                }
+                else
+                {  
+                    computerwin+=1;
+                    document.getElementById("compwin").innerText=computerwin;
+                }
+            })
+        }
+        function ScissorClick()
+        {
+            fetch('http://localhost:8080/action/Scissor')
+            .then(res=>res.json())
+            .then((resp) => {
+                console.log(resp);
+                if(resp.msg=="Player wins")
+                {
+                    userwin+=1;
+                    document.getElementById("userwin").innerText=userwin;
+                }
+                else if(resp.msg=="It is a tie"){
+                    document.getElementById("result").innerText=resp.msg;
+                }
+                else
+                {  
+                    computerwin+=1;
+                    document.getElementById("compwin").innerText=computerwin;
+                }
+            })
+        }
+    </script>
+</body>
+</html>
