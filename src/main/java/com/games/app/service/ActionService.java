@@ -11,13 +11,20 @@ public class ActionService {
 	
 	Logger logger=LoggerFactory.getLogger(ActionService.class);
 	
+	public int randomValueGenerator(int min_range,int max_range) {
+		
+		int range=max_range-min_range+1;
+		
+		return (int)(Math.random()*range)+min_range;
+	}
+	
+	
+	
 	public String generateRandomMove() {
 		int min_range=1;
 		int max_range=3;
 		
-		int range=max_range-min_range+1;
-		
-		int random_value=(int)(Math.random()*range)+min_range;
+		int random_value=randomValueGenerator(min_range,max_range);
 		
 		logger.trace("Generated random value  "+random_value);
 		
@@ -34,17 +41,17 @@ public class ActionService {
 	}
 	
 	
-	public String findResult(String UserMove) {
+	public String findResult(String userMove) {
 		String randomMove=generateRandomMove();
 		
 		logger.trace("Generated random Move  "+randomMove);
 		
-		if(UserMove.equals(randomMove)) {
+		if(userMove.equals(randomMove)) {
 			return "It is a tie";
 		}
-		else if( (UserMove.equals("Rock") && randomMove.equals("Scissor"))
-				||(UserMove.equals("Scissor") && randomMove.equals("Paper"))
-				|| (UserMove.equals("Paper") && randomMove.equals("Rock"))) {
+		else if( (userMove.equals("Rock") && randomMove.equals("Scissor"))
+				||(userMove.equals("Scissor") && randomMove.equals("Paper"))
+				|| (userMove.equals("Paper") && randomMove.equals("Rock"))) {
 			return "Player wins";
 		}
 		else {

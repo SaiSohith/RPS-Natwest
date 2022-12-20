@@ -30,14 +30,15 @@ public class ActionController {
 	}
 	
 	@GetMapping(path="/{UserMove}")
-	public ApiResponse game_state(@PathVariable("UserMove") String UserMove){
+	public ApiResponse game_state(@PathVariable("UserMove") String userMove){
 		
-		if(!UserMove.equals("Scissor") && !UserMove.equals("Rock") && !UserMove.equals("Paper")) {
+		if(!userMove.equals("Scissor") && !userMove.equals("Rock") && !userMove.equals("Paper")) {
 			logger.info("Invalid Input");
 			return new ApiResponse(422,"Invalid Input");
 		}
 		
-		String gamePlayResult=gameActionService.findResult(UserMove);
+		
+		String gamePlayResult=gameActionService.findResult(userMove);
 		
 		logger.info("Game Play Result"+gamePlayResult);
 		
