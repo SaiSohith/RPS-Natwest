@@ -39,7 +39,7 @@
         function RockClick()
         {
             
-            fetch('http://localhost:8080/action/Rock')
+            fetch('https://rps-natwest-production.up.railway.app/action/Rock')
             .then(res=>res.json())
             .then((resp) => {
                 console.log(resp);
@@ -63,7 +63,7 @@
         }
         function PaperClick()
         {
-            fetch('http://localhost:8080/action/Paper')
+            fetch('https://rps-natwest-production.up.railway.app/action/Paper')
             .then(res=>res.json())
             .then((resp) => {
                 console.log(resp);
@@ -85,7 +85,7 @@
         }
         function ScissorClick()
         {
-            fetch('http://localhost:8080/action/Scissor')
+            fetch('https://rps-natwest-production.up.railway.app/action/Scissor')
             .then(res=>res.json())
             .then((resp) => {
                 console.log(resp);
